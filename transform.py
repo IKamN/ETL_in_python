@@ -3,17 +3,17 @@ import os
 import csv
 from datetime import datetime
 
+import create_table
 from tables import PprRawAll
 from base import session
 from sqlalchemy import text
 
 # Settings
-base_path = os.path.abspath(__file__ + "/../../")
 
 # START - Paths for new February 2021 data available
 
 # Raw path where we want to extract the new CSV data
-raw_path = f"{base_path}/data/raw/downloaded_at=2021-02-01/ppr-all.csv"
+raw_path = "./data/raw/downloaded_at=2021-02-01/ppr-all.csv"
 
 # END - Paths for new February 2021 data available
 
@@ -107,9 +107,10 @@ def transform_new_data():
 
 def main():
     print("[Transform] Start")
+    print("[Transform] Create tables in database")
+    create_table.main()
     print("[Transform] Remove any old data from ppr_raw_all table")
     truncate_table()
     print("[Transform] Transform new data available in ppr_raw_all table")
     transform_new_data()
     print("[Transform] End")
-

@@ -51,7 +51,6 @@ def delete_transactions():
     # Print transactions to delete
     print("Transactions to delete:")
 
-
     # Commit the session to make the changes in the database
     session.commit()
 
@@ -63,3 +62,7 @@ def main():
     print("[Load] Deleting rows not available in the new transformed data")
     delete_transactions()
     print("[Load] End")
+
+
+if __name__ == "__main()__":
+    main()

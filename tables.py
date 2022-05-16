@@ -30,12 +30,6 @@ class PprCleanAll(Base):
     price = Column(Integer)
     description = Column(String(255))
     transaction_id = column_property(
-        cast(date_of_sale, String)
-        + "_"
-        + address
-        + "_"
-        + county
-        + "_"
-        + cast(price, String)
+        cast(date_of_sale, String) + "_" + address + "_" + county + "_" + cast(price, String)
     )
 

@@ -4,5 +4,9 @@ from base import Base, engine
 from tables import PprRawAll, PprCleanAll
 
 # Create the table in the database
-if __name__ == "__main__":
+#if __name__ == "__main__":
+    #Base.metadata.create_all(engine)
+
+
+def main():
     Base.metadata.create_all(engine)
